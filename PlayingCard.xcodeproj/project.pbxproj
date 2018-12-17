@@ -12,16 +12,22 @@
 		EDC9A89121C71EB50036A665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC9A88F21C71EB50036A665 /* Main.storyboard */; };
 		EDC9A89321C71EB60036A665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC9A89221C71EB60036A665 /* Assets.xcassets */; };
 		EDC9A89621C71EB60036A665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC9A89421C71EB60036A665 /* LaunchScreen.storyboard */; };
+		EDC9A89E21C71EEB0036A665 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9A89D21C71EEB0036A665 /* PlayingCard.swift */; };
+		EDC9A8A021C721170036A665 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9A89F21C721170036A665 /* PlayingCardDeck.swift */; };
+		EDC9A8A221C727B00036A665 /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9A8A121C727B00036A665 /* PlayingCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EDC9A88821C71EB50036A665 /* PlayingCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayingCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC9A88821C71EB50036A665 /* PlayingCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = PlayingCard.app; path = "/Users/preetpatel/Documents/Developer/PlayingCard/build/Debug-iphoneos/PlayingCard.app"; sourceTree = "<absolute>"; };
 		EDC9A88B21C71EB50036A665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC9A88D21C71EB50036A665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDC9A89021C71EB50036A665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDC9A89221C71EB60036A665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDC9A89521C71EB60036A665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDC9A89721C71EB60036A665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC9A89D21C71EEB0036A665 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		EDC9A89F21C721170036A665 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
+		EDC9A8A121C727B00036A665 /* PlayingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,16 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				EDC9A88A21C71EB50036A665 /* PlayingCard */,
-				EDC9A88921C71EB50036A665 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		EDC9A88921C71EB50036A665 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EDC9A88821C71EB50036A665 /* PlayingCard.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		EDC9A88A21C71EB50036A665 /* PlayingCard */ = {
@@ -57,6 +54,9 @@
 				EDC9A88B21C71EB50036A665 /* AppDelegate.swift */,
 				EDC9A88D21C71EB50036A665 /* ViewController.swift */,
 				EDC9A88F21C71EB50036A665 /* Main.storyboard */,
+				EDC9A8A121C727B00036A665 /* PlayingCardView.swift */,
+				EDC9A89D21C71EEB0036A665 /* PlayingCard.swift */,
+				EDC9A89F21C721170036A665 /* PlayingCardDeck.swift */,
 				EDC9A89221C71EB60036A665 /* Assets.xcassets */,
 				EDC9A89421C71EB60036A665 /* LaunchScreen.storyboard */,
 				EDC9A89721C71EB60036A665 /* Info.plist */,
@@ -108,7 +108,7 @@
 				Base,
 			);
 			mainGroup = EDC9A87F21C71EB50036A665;
-			productRefGroup = EDC9A88921C71EB50036A665 /* Products */;
+			productRefGroup = EDC9A87F21C71EB50036A665;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -136,6 +136,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC9A88E21C71EB50036A665 /* ViewController.swift in Sources */,
+				EDC9A8A021C721170036A665 /* PlayingCardDeck.swift in Sources */,
+				EDC9A89E21C71EEB0036A665 /* PlayingCard.swift in Sources */,
+				EDC9A8A221C727B00036A665 /* PlayingCardView.swift in Sources */,
 				EDC9A88C21C71EB50036A665 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
