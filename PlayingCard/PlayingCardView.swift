@@ -11,8 +11,8 @@ import UIKit
 @IBDesignable
 class PlayingCardView: UIView {
     
-    var rank: Int = 5 { didSet { setNeedsDisplay(); setNeedsLayout()}}
-    var suit: String = "♥️" { didSet { setNeedsDisplay(); setNeedsLayout()}}
+    var rank: Int = 11 { didSet { setNeedsDisplay(); setNeedsLayout()}}
+    var suit: String = "❤️" { didSet { setNeedsDisplay(); setNeedsLayout()}}
     var isFaceUp: Bool = true { didSet { setNeedsDisplay(); setNeedsLayout()}}
 
     var faceCardScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize {didSet {setNeedsDisplay()}}
