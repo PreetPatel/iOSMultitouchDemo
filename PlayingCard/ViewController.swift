@@ -7,11 +7,31 @@
 //
 
 import UIKit
+import AVKit
+import MediaPlayer
 
 class ViewController: UIViewController {
     
     var deck = PlayingCardDeck()
     @IBOutlet var cardViews: [PlayingCardView]!
+    
+    lazy var animator = UIDynamicAnimator(referenceView: view)
+    
+    lazy var collisionBehaviour: UICollisionBehavior = {
+        let behaviour = UICollisionBehavior()
+        behaviour.translatesReferenceBoundsIntoBoundary = true
+        animator.addBehavior(behaviour)
+        return behaviour
+    }()
+    
+    lazy var itemBehaviour: UIDynamicItemBehavior = {
+        let behaviour = UIDynamicItemBehavior()
+        behaviour.allowsRotation = false
+        behaviour.elasticity = 1.0
+        behaviour.resistance = 0 
+        animator.addBehavior(behaviour)
+        return behaviour
+    }()
     
     //    @IBOutlet weak var playingCardView: PlayingCardView! {
     //        didSet {
@@ -58,6 +78,20 @@ class ViewController: UIViewController {
             
             // Add tap gesture recogniser
             cardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flipcard(_:))))
+            
+            //Add collison behaviour
+            collisionBehaviour.addItem(cardView)
+            itemBehaviour.addItem(cardView)
+            
+            let push = UIPushBehavior(items: [cardView], mode: .instantaneous)
+            push.angle = (2*CGFloat.pi).arc4random
+            push.magnitude = CGFloat(1.0) + CGFloat(2.0).arc4random
+            
+            push.action = { [unowned push] in
+                push.dynamicAnimator?.removeBehavior(push)
+            }
+            
+             animator.addBehavior(push)
         }
     }
     
@@ -70,8 +104,9 @@ class ViewController: UIViewController {
             faceUpCardViews[0].rank == faceUpCardViews[1].rank &&
             faceUpCardViews[0].suit == faceUpCardViews[1].suit
     }
-    
+
     @objc func flipcard(_ recogniser: UITapGestureRecognizer) {
+        
         switch recogniser.state {
         case .ended:
             // .view in recogniser is a var that references to the view that was tapped on
@@ -142,3 +177,14 @@ class ViewController: UIViewController {
     
 }
 
+extension CGFloat {
+    var arc4random: CGFloat {
+        if self > 0 {
+            return CGFloat(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -CGFloat(arc4random_uniform(UInt32(abs(self))))
+        } else {
+            return 0
+        }
+    }
+}
